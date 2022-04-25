@@ -1,5 +1,6 @@
 /* eslint-disable  no-restricted-globals */
 /* eslint-disable  no-unused-vars */
+/* eslint-disable  no-undef */
 import ManageBooks from './Book_Management.js';
 
 const books = new ManageBooks();
@@ -17,9 +18,7 @@ export default class Ui {
     const lastMod = document.querySelector('#last-modified');
     setInterval(() => {
       const date = luxon.DateTime.now();
-      lastMod.innerHTML = date.toLocaleString(
-        luxon.DateTime.DATETIME_MED_WITH_SECONDS
-      );
+      lastMod.innerHTML = date.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
     }, 1);
     navListBtn.addEventListener('click', () => {
       listSection.style.display = 'block';
@@ -48,4 +47,4 @@ export default class Ui {
       });
     });
   };
-}
+};

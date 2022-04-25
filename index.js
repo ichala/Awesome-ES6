@@ -1,3 +1,7 @@
+/* eslint-disable  no-restricted-globals */
+/* eslint-disable  no-unused-vars */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable max-classes-per-file */
 import Ui from './modules/Ui.js';
-const init_data = new Ui;
-init_data.init_ui();
+const InitData = new Ui;
+InitData.InitUi();

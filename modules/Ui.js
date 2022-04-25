@@ -1,21 +1,22 @@
-import ManageBooks from './Book_Management.js';
+import ManageBooks from "./Book_Management.js";
 const books = new ManageBooks();
 export default class Ui {
-
-   init_ui = () => {
+  InitUi = () => {
     books.display();
     const navListBtn = document.querySelector("#nav-list");
     const navAddNewBtn = document.querySelector("#nav-add-new");
-    const remove_buttons = document.querySelectorAll('button');
+    const remove_buttons = document.querySelectorAll("button");
     const navContactBtn = document.querySelector("#nav-contact");
-    const AddBtn = document.querySelector('#add_Button');
+    const AddBtn = document.querySelector("#add_Button");
     const listSection = document.querySelector("#list");
     const addNewSection = document.querySelector("#add-new");
     const contactSection = document.querySelector("#contact");
-    const lastMod = document.querySelector('#last-modified');
+    const lastMod = document.querySelector("#last-modified");
     setInterval(() => {
       const date = luxon.DateTime.now();
-      lastMod.innerHTML = date.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
+      lastMod.innerHTML = date.toLocaleString(
+        luxon.DateTime.DATETIME_MED_WITH_SECONDS
+      );
     }, 1);
     navListBtn.addEventListener("click", () => {
       listSection.style.display = "block";
@@ -32,17 +33,16 @@ export default class Ui {
       addNewSection.style.display = "none";
       listSection.style.display = "none";
     });
-    AddBtn.addEventListener('click', () => {
-    const name = document.querySelector('#title').value;
-    const author = document.querySelector('#author').value;
-    books.add(name, author);
-  });
-  remove_buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-    const id = Number(btn.id);
-    books.delete(id);
-  });
-  })
-   }
-  
+    AddBtn.addEventListener("click", () => {
+      const name = document.querySelector("#title").value;
+      const author = document.querySelector("#author").value;
+      books.add(name, author);
+    });
+    remove_buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = Number(btn.id);
+        books.delete(id);
+      });
+    });
+  };
 }

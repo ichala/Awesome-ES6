@@ -1,4 +1,5 @@
 import ManageBooks from './Book_Management.js';
+import { DateTime } from "./luxon.js";
 
 const books = new ManageBooks();
 export default class Ui {
@@ -14,8 +15,8 @@ export default class Ui {
     const contactSection = document.querySelector('#contact');
     const lastMod = document.querySelector('#last-modified');
     setInterval(() => {
-      const date = luxon.DateTime.now();
-      lastMod.innerHTML = date.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
+      const date = DateTime.now();
+      lastMod.innerHTML = date.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
     }, 1);
     navListBtn.addEventListener('click', () => {
       listSection.style.display = 'block';

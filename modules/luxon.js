@@ -1,5 +1,4 @@
-/* eslint-disable no-alert, no-console */
-
+/*eslint-disable */
 /**
  * @private
  */
@@ -7000,3 +6999,4 @@
  
  export { DateTime, Duration, FixedOffsetZone, IANAZone, Info, Interval, InvalidZone, Settings, SystemZone, VERSION, Zone };
  //# sourceMappingURL=luxon.js.map
+ /*eslint-enable */

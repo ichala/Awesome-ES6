@@ -1,6 +1,5 @@
 /* eslint-disable  no-restricted-globals */
 import SingleBook from './Book.js';
-
 export default class ManageBooks {
   constructor() {
     this.book_list = localStorage.getItem('save')

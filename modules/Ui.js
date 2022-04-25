@@ -1,6 +1,3 @@
-/* eslint-disable  no-restricted-globals */
-/* eslint-disable  no-unused-vars */
-/* eslint-disable  no-undef */
 import ManageBooks from './Book_Management.js';
 
 const books = new ManageBooks();

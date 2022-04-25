@@ -1,21 +1,23 @@
-import SingleBook from "./Book.js";
+/* eslint-disable  no-restricted-globals */
+import SingleBook from './Book.js';
+
 export default class ManageBooks {
   constructor() {
-    this.book_list = localStorage.getItem("save")
-      ? JSON.parse(localStorage.getItem("save"))
+    this.book_list = localStorage.getItem('save')
+      ? JSON.parse(localStorage.getItem('save'))
       : [];
   }
 
   display = () => {
-    const BookList = document.querySelector("#book-list");
+    const BookList = document.querySelector('#book-list');
     if (this.book_list) {
       this.book_list.forEach((book) => {
         const NewBook = ` 
-         <p>"${book.name}" by ${book.author}</p>
-         <button type="button" id=${book.id} >Remove</button>
+         <p>${book.name} by ${book.author}</p>
+         <button type='button' id=${book.id} >Remove</button>
          `;
-        const Singlebook = document.createElement("div");
-        Singlebook.classList.add("single-book");
+        const Singlebook = document.createElement('div');
+        Singlebook.classList.add('single-book');
         Singlebook.innerHTML = NewBook;
         BookList.appendChild(Singlebook);
       });
@@ -33,7 +35,7 @@ export default class ManageBooks {
   };
 
   LocalSave = (arr) => {
-    localStorage.setItem("save", JSON.stringify(arr));
+    localStorage.setItem('save', JSON.stringify(arr));
     location.reload();
   };
 
